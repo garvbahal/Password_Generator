@@ -17,8 +17,8 @@ const symbols = "~`!@#$%^&*()_-+={[]}|:<,.>?/;'";
 // starting values
 let password = "";
 let passwordLength = 10;
-let checkCount = 0;
-
+let checkCount = 1;
+uppercaseCheck.checked = true;
 handleSlider();
 
 function handleSlider() {
@@ -29,6 +29,7 @@ function handleSlider() {
 
 function setIndicator(color) {
   indicator.style.backgroundColor = color;
+  indicator.style.cssText = "box-shadow: 0 0 14px color";
   // shadow H/W
 }
 
@@ -107,21 +108,24 @@ copyBtn.addEventListener("click", () => {
 });
 
 function handleCheckBoxChange() {
+  // console.log('inside handle check change function')
   checkCount = 0;
   allCheckBox.forEach((checkBox) => {
     if (checkBox.checked) {
       checkCount++;
     }
   });
+  // console.log('value checked')
 
-  if (checkCount > passwordLength) {
+  if (passwordLength < checkCount) {
     passwordLength = checkCount;
     handleSlider();
   }
+  // console.log('returning from function');
 }
 
 allCheckBox.forEach((checkBox) => {
-  checkBox.addEventListener("click", handleCheckBoxChange());
+  checkBox.addEventListener("change", handleCheckBoxChange);
 });
 
 inputSlider.addEventListener("input", (event) => {
