@@ -19,17 +19,21 @@ let password = "";
 let passwordLength = 10;
 let checkCount = 1;
 uppercaseCheck.checked = true;
+setIndicator("#ccc");
 handleSlider();
 
 function handleSlider() {
   inputSlider.value = passwordLength;
   lengthDisplay.innerText = passwordLength;
   // kuch aur likhna chahiye? - H/W
+  const min = inputSlider.min;
+  const max = inputSlider.max;
+
+  inputSlider.style.backgroundSize = ((passwordLength - min)*100/(max-min)) + "% 100%";
 }
 
 function setIndicator(color) {
-  indicator.style.backgroundColor = color;
-  indicator.style.cssText = "box-shadow: 0 0 14px color";
+  indicator.style.cssText = `background-color:${color}; box-shadow: 0 0 14px ${color}`;
   // shadow H/W
 }
 

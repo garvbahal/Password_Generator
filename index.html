@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=League+Spartan:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -17,8 +24,8 @@
           data-passwordDisplay
         />
 
-        <button data-copy>
-          <span data-copyMsg></span>
+        <button class="copyBtn" data-copy>
+          <span class="tooltip" data-copyMsg></span>
           <img src="assets/copy.svg" alt="copy" width="23px" height="23px" />
         </button>
       </div>
@@ -40,19 +47,19 @@
         />
 
         <!-- checkboxes -->
-        <div>
+        <div class="check">
           <input type="checkbox" id="uppercase" />
           <label for="uppercase">Include Uppercase Letters</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="lowercase" />
           <label for="lowercase">Include lowercase Letters</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="numbers" />
           <label for="numbers">Include numbers</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="symbols" />
           <label for="symbols">Include symbols</label>
         </div>
@@ -60,7 +67,7 @@
         <!-- strength section -->
         <div class="strength-container">
           <p>Strength</p>
-          <div data-indicator></div>
+          <div class="indicator" data-indicator></div>
         </div>
 
         <!-- generate pass button -->
